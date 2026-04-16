@@ -3,10 +3,10 @@ import { NavLink, Link, useLocation } from 'react-router-dom'
 import styles from './Nav.module.css'
 
 const links = [
-  { to: '/sign', label: 'de/sign' },
-  { to: '/velop', label: 'de/velop' },
-  { to: '/fense', label: 'de/fense' },
-  { to: '/tails', label: 'de/tails' },
+  { to: '/sign', label: 'design' },
+  { to: '/velop', label: 'develop' },
+  { to: '/fense', label: 'defense' },
+  { to: '/tails', label: 'details' },
 ]
 
 export default function Nav() {
