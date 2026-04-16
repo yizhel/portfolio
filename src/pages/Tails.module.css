@@ -1,0 +1,81 @@
+.main {
+  padding-top: 5rem;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 5rem 2.5rem 3rem;
+  max-width: 700px;
+}
+
+.slug {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--off-white);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 4rem;
+  padding: 0 2.5rem 6rem;
+  align-items: start;
+}
+
+.bio {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.bio p + p {
+  margin-top: 1.25rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 0.25rem;
+}
+
+.sideBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sideTitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.sideLink {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  display: block;
+}
+
+.sideLink:hover {
+  color: var(--off-white);
+}
+
+@media (max-width: 700px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

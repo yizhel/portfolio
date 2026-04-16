@@ -1,0 +1,65 @@
+.main {
+  padding-top: 5rem;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 5rem 2.5rem 3rem;
+  max-width: 700px;
+}
+
+.slug {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--off-white);
+  margin-bottom: 0.75rem;
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.gallery {
+  columns: 3;
+  column-gap: 4px;
+  padding: 0 2.5rem 4rem;
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 4px;
+  display: block;
+  break-inside: avoid;
+  transition: opacity 0.2s;
+}
+
+.gallery img:hover {
+  opacity: 0.85;
+}
+
+.placeholder {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    columns: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    columns: 1;
+  }
+}

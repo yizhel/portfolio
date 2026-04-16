@@ -1,0 +1,93 @@
+.main {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding-top: 4rem;
+  overflow: hidden;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 2.5rem 1.5rem;
+  max-width: 900px;
+}
+
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.headline {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--off-white);
+  margin-bottom: 1rem;
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 480px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(126, 184, 212, 0.08);
+  border-top: 1px solid rgba(126, 184, 212, 0.08);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.5rem 2rem;
+  background: var(--navy);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: var(--navy-mid);
+}
+
+.card:hover .arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+.cardSlug {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.15rem;
+}
+
+.cardLabel {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--off-white);
+}
+
+.cardDesc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.arrow {
+  font-size: 1rem;
+  color: var(--text-muted);
+  transition: transform 0.2s, color 0.2s;
+  margin-top: 0.25rem;
+}
