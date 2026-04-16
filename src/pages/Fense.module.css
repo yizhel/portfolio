@@ -148,3 +148,22 @@
     grid-column: 1 / -1;
   }
 }
+
+@media (max-width: 640px) {
+  .header {
+    padding: 4rem 1.25rem 2rem;
+  }
+
+  .content {
+    padding: 1.5rem 1.25rem 4rem;
+    gap: 2rem;
+  }
+
+  .sidebar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statBlock:last-of-type {
+    display: none;
+  }
+}

@@ -10,7 +10,7 @@ export default function Tails() {
       <section className={styles.content}>
         <div className={styles.bio}>
           <p>
-            I'm Yizhe — an HCI graduate from Carnegie Mellon University with a background that spans
+            I'm Andy — an HCI graduate from Carnegie Mellon University with a background that spans
             design, data analysis, and software engineering. I'm drawn to the seam between systems and
             people: how interfaces shape behaviour, how data reveals patterns, and how good engineering
             makes complex things feel simple.
@@ -21,9 +21,8 @@ export default function Tails() {
             UX & Cloud Engineer at Apex AI, building the interface layer for machine learning systems on AWS.
           </p>
           <p>
-            Outside of work I coach the CMU Fencing Club, referee nationally as a USA Fencing N1, and
-            serve on the Ethics Committee of the USA Fencing Referees Commission. Fencing has been a constant
-            — I've been a competitor, a club president, a board member, and now a coach.
+            Outside of work I travel and represent the USA as a national and international fencing referee.
+
           </p>
           <p>
             I'm based in Pittsburgh.
@@ -47,7 +46,9 @@ export default function Tails() {
             >
               LinkedIn →
             </a>
+
           </div>
+
 
           <div className={styles.sideBlock}>
             <h2 className={styles.sideTitle}>Education</h2>

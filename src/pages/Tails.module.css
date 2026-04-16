@@ -73,9 +73,25 @@
   color: var(--off-white);
 }
 
+.sideText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  display: block;
+}
+
 @media (max-width: 700px) {
   .content {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 4rem 1.25rem 2rem;
+  }
+
+  .content {
+    padding: 0 1.25rem 4rem;
   }
 }

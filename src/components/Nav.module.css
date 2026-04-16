@@ -19,6 +19,7 @@
   letter-spacing: 0.04em;
   color: var(--off-white);
   transition: color 0.2s;
+  z-index: 101;
 }
 
 .logo:hover {
@@ -45,4 +46,61 @@
 
 .active {
   color: var(--accent);
+}
+
+/* Hamburger — hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--off-white);
+  border-radius: 1px;
+  transition: transform 0.25s, opacity 0.25s;
+  transform-origin: center;
+}
+
+.barTop  { transform: translateY(6.5px) rotate(45deg); }
+.barMid  { opacity: 0; }
+.barBot  { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width: 640px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--navy);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .navOpen {
+    display: flex;
+  }
+
+  .link {
+    font-size: 1.25rem;
+  }
 }

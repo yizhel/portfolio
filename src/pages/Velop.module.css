@@ -58,6 +58,17 @@
   }
 }
 
+@media (max-width: 640px) {
+  .header {
+    padding: 4rem 1.25rem 2rem;
+  }
+
+  .gallery {
+    padding: 0 1.25rem 4rem;
+    columns: 2;
+  }
+}
+
 @media (max-width: 480px) {
   .gallery {
     columns: 1;
