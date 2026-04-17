@@ -9,7 +9,7 @@ const CATEGORIES = {
   Club:      { color: '#4db8f0', label: 'Club visited' },
   Competed:  { color: '#4ddd88', label: 'Competed' },
   Referee:   { color: '#ffffff', label: 'Refereed' },
-  Watch:     { color: '#f5a040', label: 'Watched' },
+  Spectator:     { color: '#f5a040', label: 'Spectator' },
 }
 
 const locations = [
@@ -82,11 +82,11 @@ const locations = [
   { name: "Prime F. Osborn III Convention Center",    category: 'Referee', coords: [-81.6720716,  30.3280748] },
   { name: "Los Angeles Convention Center",            category: 'Referee', coords: [-118.2695624, 34.0403207] },
   { name: "IM West Fitness Center",                   category: 'Referee', coords: [-84.4871,     42.7288   ] },
-  // Watched
-  { name: "Wuxi Sports Center",              category: 'Watch', coords: [120.264328,   31.546871 ] },
-  { name: "IGA Stadium (Montreal)",          category: 'Watch', coords: [-73.6272889,  45.5332997] },
-  { name: "Walter E. Washington Conv. Ctr", category: 'Watch', coords: [-77.0229934,  38.9048838] },
-  { name: "Grand Palais (Paris)",            category: 'Watch', coords: [2.3124544,    48.8661091] },
+  // Spectator
+  { name: "Wuxi Sports Center",              category: 'Spectator', coords: [120.264328,   31.546871 ] },
+  { name: "IGA Stadium (Montreal)",          category: 'Spectator', coords: [-73.6272889,  45.5332997] },
+  { name: "Walter E. Washington Conv. Ctr", category: 'Spectator', coords: [-77.0229934,  38.9048838] },
+  { name: "Grand Palais (Paris)",            category: 'Spectator', coords: [2.3124544,    48.8661091] },
 ]
 
 export default function FencingMap() {
