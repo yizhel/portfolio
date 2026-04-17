@@ -14,12 +14,12 @@ const projects = [
     skills: ['React', 'AWS EC2', 'AWS Lambda', 'S3', 'UX Design', 'HCI', 'Figma', 'IAM'],
   },
   {
-    title: 'Data & Technology — Mid-Atlantic AIDS ETC',
+    title: 'Data, Evaluation & Technology Specialist — MAAETC',
     tags: ['Data'],
     year: '2025',
     type: 'Role',
     desc: 'Analyzed program performance data and presented insights to stakeholders to guide resource allocation and educational offerings.',
-    detail: 'Consulted on data analytics across training initiatives, translating performance data into actionable recommendations for stakeholders. Coordinated digital marketing campaigns across email and social media, resulting in a 16% increase in subscriptions and 90% turnout for in-person events.',
+    detail: 'Consulted on data analytics across training initiatives at the Mid-Atlantic AIDS Education and Training Center at the University of Pittsburgh, translating performance data into actionable recommendations for stakeholders. Coordinated digital marketing campaigns across email and social media, resulting in a 16% increase in subscriptions and 90% turnout for in-person events.',
     skills: ['Data Analytics', 'Stakeholder Presentation', 'Digital Marketing', 'Workflow Optimization'],
   },
   {

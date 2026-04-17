@@ -93,7 +93,16 @@ export default function FencingMap({ fullHeight = false }) {
   const [tooltip, setTooltip] = useState(null)
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
   const [zoom, setZoom] = useState(1)
+  const [isMobile, setIsMobile] = useState(false)
   const mapRef = useRef(null)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 640px)')
+    setIsMobile(mq.matches)
+    const handler = (e) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   useEffect(() => {
     const el = mapRef.current
@@ -118,7 +127,7 @@ export default function FencingMap({ fullHeight = false }) {
         ))}
       </div>
 
-      <div className={styles.mapContainer} ref={mapRef}>
+      <div className={styles.mapContainer} ref={mapRef} onTouchStart={() => setTooltip(null)}>
         <ComposableMap
           projection="geoNaturalEarth1"
           projectionConfig={{ scale: 153 }}
@@ -127,7 +136,8 @@ export default function FencingMap({ fullHeight = false }) {
           <ZoomableGroup
             center={[0, 20]}
             zoom={1}
-            maxZoom={128}
+            maxZoom={isMobile ? 256 : 128}
+            onMove={() => setTooltip(null)}
             onMoveEnd={({ zoom }) => setZoom(zoom)}
           >
             <Geographies geography={GEO_URL}>
@@ -182,15 +192,27 @@ export default function FencingMap({ fullHeight = false }) {
                   setTooltipPos({ x: e.clientX - rect.left, y: e.clientY - rect.top })
                 }}
                 onMouseLeave={() => setTooltip(null)}
+                onTouchStart={(e) => {
+                  e.stopPropagation()
+                  const rect = e.target.closest('svg').parentElement.getBoundingClientRect()
+                  const touch = e.touches[0]
+                  setTooltipPos({ x: touch.clientX - rect.left, y: touch.clientY - rect.top - 80 })
+                  setTooltip(prev => prev?.name === loc.name ? null : loc)
+                }}
               >
                 <circle
-                  r={5 / zoom}
+                  r={(isMobile ? 20 : 14) / zoom}
+                  fill="transparent"
+                  style={{ cursor: 'pointer' }}
+                />
+                <circle
+                  r={(isMobile ? 10 : 5) / zoom}
                   fill={CATEGORIES[loc.category].color}
                   fillOpacity={0.85}
                   stroke={CATEGORIES[loc.category].color}
                   strokeWidth={0.5 / zoom}
                   strokeOpacity={0.4}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: 'pointer', pointerEvents: 'none' }}
                 />
               </Marker>
             ))}
