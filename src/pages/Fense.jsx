@@ -1,4 +1,5 @@
 import styles from './Fense.module.css'
+import FencingMap from '../components/FencingMap'
 
 export default function Fense() {
   return (
@@ -77,6 +78,11 @@ export default function Fense() {
             ))}
           </div>
         </aside>
+      </section>
+
+      <section className={styles.mapSection}>
+        <h2 className={styles.mapTitle}>Where fencing has taken me</h2>
+        <FencingMap />
       </section>
     </main>
   )

@@ -24,6 +24,10 @@
   background-color: var(--navy);
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
