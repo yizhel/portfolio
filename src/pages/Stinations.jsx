@@ -9,7 +9,7 @@ export default function Stinations() {
         <p className={styles.sub}>Places I've competed, refereed, trained, and spectated.</p>
       </div>
       <div className={styles.mapWrap}>
-        <FencingMap />
+        <FencingMap fullHeight />
       </div>
     </main>
   )

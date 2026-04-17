@@ -89,7 +89,7 @@ const locations = [
   { name: "Grand Palais (Paris)",           category: 'Spectator', coords: [2.3124544,    48.8661091], events: ["2024 — Olympic Games"] },
 ]
 
-export default function FencingMap() {
+export default function FencingMap({ fullHeight = false }) {
   const [tooltip, setTooltip] = useState(null)
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
   const [zoom, setZoom] = useState(1)
@@ -100,11 +100,15 @@ export default function FencingMap() {
     if (!el) return
     const prevent = (e) => e.preventDefault()
     el.addEventListener('wheel', prevent, { passive: false })
-    return () => el.removeEventListener('wheel', prevent)
+    el.addEventListener('touchmove', prevent, { passive: false })
+    return () => {
+      el.removeEventListener('wheel', prevent)
+      el.removeEventListener('touchmove', prevent)
+    }
   }, [])
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${fullHeight ? styles.wrapperFull : ''}`}>
       <div className={styles.legend}>
         {Object.entries(CATEGORIES).map(([key, { color, label }]) => (
           <div key={key} className={styles.legendItem}>

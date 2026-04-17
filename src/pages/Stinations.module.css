@@ -1,27 +1,22 @@
 .main {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
   padding-top: 5rem;
-  min-height: 100vh;
 }
 
 .header {
-  padding: 4rem 2.5rem 2rem;
-  max-width: 700px;
-}
-
-.slug {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.875rem;
-  color: var(--accent);
-  letter-spacing: 0.08em;
-  display: block;
-  margin-bottom: 1rem;
+  padding: 1.5rem 2.5rem 1rem;
+  flex-shrink: 0;
 }
 
 .title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 300;
   color: var(--off-white);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
 .sub {
@@ -30,15 +25,19 @@
 }
 
 .mapWrap {
-  padding: 0 2.5rem 6rem;
+  flex: 1;
+  min-height: 0;
+  padding: 0 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 640px) {
   .header {
-    padding: 3rem 1.25rem 1.5rem;
+    padding: 1rem 1.25rem 0.75rem;
   }
 
   .mapWrap {
-    padding: 0 1.25rem 4rem;
+    padding: 0 1.25rem 1rem;
   }
 }

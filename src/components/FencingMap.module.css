@@ -4,6 +4,17 @@
   gap: 1rem;
 }
 
+.wrapperFull {
+  flex: 1;
+  min-height: 0;
+}
+
+.wrapperFull .mapContainer {
+  flex: 1;
+  min-height: 0;
+  aspect-ratio: unset;
+}
+
 .legend {
   display: flex;
   gap: 1.5rem;
@@ -38,6 +49,7 @@
   border-radius: 2px;
   overflow: hidden;
   border: 1px solid rgba(126, 184, 212, 0.1);
+  touch-action: none;
 }
 
 .tooltip {
@@ -119,4 +131,19 @@
   border-radius: 2px;
   transition: height 0.15s ease;
   min-height: 3px;
+}
+
+@media (max-width: 640px) {
+  .mapContainer {
+    aspect-ratio: 3 / 2;
+  }
+
+  .tooltip {
+    max-width: 220px;
+    font-size: 0.85rem;
+  }
+
+  .legend {
+    gap: 0.75rem;
+  }
 }

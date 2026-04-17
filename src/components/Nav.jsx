@@ -16,33 +16,51 @@ export default function Nav() {
   useEffect(() => { setOpen(false) }, [location])
 
   return (
-    <header className={styles.header}>
-      <Link to="/" className={styles.logo}>yizhe (andy) liu</Link>
+    <>
+      <header className={styles.header}>
+        <Link to="/" className={styles.logo}>yizhe (andy) liu</Link>
 
-      <nav className={`${styles.nav} ${open ? styles.navOpen : ''}`}>
-        {links.map(({ to, label }) => (
-          <NavLink
-            key={to}
-            to={to}
-            className={({ isActive }) =>
-              `${styles.link} ${isActive ? styles.active : ''}`
-            }
-          >
-            {label}
-          </NavLink>
-        ))}
-      </nav>
+        <nav className={styles.nav}>
+          {links.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              className={({ isActive }) =>
+                `${styles.link} ${isActive ? styles.active : ''}`
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
+        </nav>
 
-      <button
-        className={styles.hamburger}
-        onClick={() => setOpen(o => !o)}
-        aria-label="Toggle menu"
-        aria-expanded={open}
-      >
-        <span className={`${styles.bar} ${open ? styles.barTop : ''}`} />
-        <span className={`${styles.bar} ${open ? styles.barMid : ''}`} />
-        <span className={`${styles.bar} ${open ? styles.barBot : ''}`} />
-      </button>
-    </header>
+        <button
+          className={styles.hamburger}
+          onClick={() => setOpen(o => !o)}
+          aria-label="Toggle menu"
+          aria-expanded={open}
+        >
+          <span className={`${styles.bar} ${open ? styles.barTop : ''}`} />
+          <span className={`${styles.bar} ${open ? styles.barMid : ''}`} />
+          <span className={`${styles.bar} ${open ? styles.barBot : ''}`} />
+        </button>
+      </header>
+
+      {open && (
+        <nav className={styles.mobileMenu}>
+          {links.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              className={({ isActive }) =>
+                `${styles.link} ${isActive ? styles.active : ''}`
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
+        </nav>
+      )}
+    </>
   )
 }
