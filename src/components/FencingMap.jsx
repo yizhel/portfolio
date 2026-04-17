@@ -95,6 +95,11 @@ export default function FencingMap({ fullHeight = false }) {
   const [zoom, setZoom] = useState(1)
   const [isMobile, setIsMobile] = useState(false)
   const mapRef = useRef(null)
+  const tooltipRef = useRef(null)
+  const tooltipPosRef = useRef({ x: 0, y: 0 })
+  const lastTouchRef = useRef(null)
+  const touchOnMarkerRef = useRef(false)
+  const isPanningRef = useRef(false)
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 640px)')
@@ -107,12 +112,51 @@ export default function FencingMap({ fullHeight = false }) {
   useEffect(() => {
     const el = mapRef.current
     if (!el) return
-    const prevent = (e) => e.preventDefault()
-    el.addEventListener('wheel', prevent, { passive: false })
-    el.addEventListener('touchmove', prevent, { passive: false })
+
+    const preventWheel = (e) => e.preventDefault()
+
+    const onTouchStart = (e) => {
+      const touch = e.touches[0]
+      lastTouchRef.current = { x: touch.clientX, y: touch.clientY }
+      isPanningRef.current = false
+      touchOnMarkerRef.current = false
+    }
+
+    const onTouchMove = (e) => {
+      e.preventDefault()
+      if (!lastTouchRef.current) return
+      const touch = e.touches[0]
+      const dx = touch.clientX - lastTouchRef.current.x
+      const dy = touch.clientY - lastTouchRef.current.y
+      lastTouchRef.current = { x: touch.clientX, y: touch.clientY }
+      if (Math.abs(dx) > 2 || Math.abs(dy) > 2) isPanningRef.current = true
+      if (tooltipRef.current) {
+        const newPos = { x: tooltipPosRef.current.x + dx, y: tooltipPosRef.current.y + dy }
+        tooltipPosRef.current = newPos
+        setTooltipPos({ ...newPos })
+      }
+    }
+
+    const onTouchEnd = () => {
+      if (!touchOnMarkerRef.current && !isPanningRef.current) {
+        tooltipRef.current = null
+        setTooltip(null)
+      }
+      touchOnMarkerRef.current = false
+      isPanningRef.current = false
+      lastTouchRef.current = null
+    }
+
+    el.addEventListener('wheel', preventWheel, { passive: false })
+    el.addEventListener('touchstart', onTouchStart, { passive: true })
+    el.addEventListener('touchmove', onTouchMove, { passive: false })
+    el.addEventListener('touchend', onTouchEnd)
+
     return () => {
-      el.removeEventListener('wheel', prevent)
-      el.removeEventListener('touchmove', prevent)
+      el.removeEventListener('wheel', preventWheel)
+      el.removeEventListener('touchstart', onTouchStart)
+      el.removeEventListener('touchmove', onTouchMove)
+      el.removeEventListener('touchend', onTouchEnd)
     }
   }, [])
 
@@ -131,7 +175,7 @@ export default function FencingMap({ fullHeight = false }) {
         <ComposableMap
           projection="geoNaturalEarth1"
           projectionConfig={{ scale: 153 }}
-          style={{ width: '100%', height: '100%' }}
+          style={{ width: '100%', height: '100%', willChange: 'transform' }}
         >
           <ZoomableGroup
             center={[0, 20]}
@@ -212,6 +256,7 @@ export default function FencingMap({ fullHeight = false }) {
                   stroke={CATEGORIES[loc.category].color}
                   strokeWidth={0.5 / zoom}
                   strokeOpacity={0.4}
+                  shapeRendering="geometricPrecision"
                   style={{ cursor: 'pointer', pointerEvents: 'none' }}
                 />
               </Marker>
