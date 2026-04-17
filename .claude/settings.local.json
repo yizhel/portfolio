@@ -5,7 +5,8 @@
       "Bash(npx create-vite@latest . --template react)",
       "Bash(npx create-vite *)",
       "Bash(npm install *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "WebSearch"
     ]
   }
 }

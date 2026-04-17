@@ -37,7 +37,7 @@
 
 .filter {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   letter-spacing: 0.06em;
   padding: 0.4rem 1rem;
   border: 1px solid rgba(126, 184, 212, 0.2);
@@ -115,7 +115,7 @@
 
 .yearLabel {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: var(--accent);
   letter-spacing: 0.06em;
   white-space: nowrap;
@@ -209,7 +209,7 @@
 }
 
 .timelineDesc {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.65;
   max-width: 680px;
@@ -220,7 +220,7 @@
 
 .type {
   font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   letter-spacing: 0.06em;
   padding: 0.12rem 0.45rem;
   border-radius: 2px;
@@ -230,7 +230,7 @@
 
 .tag {
   font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   letter-spacing: 0.06em;
   padding: 0.12rem 0.45rem;
   border: 1px solid rgba(126, 184, 212, 0.25);
@@ -288,7 +288,7 @@
 
 .year {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: var(--text-muted);
 }
 
@@ -307,7 +307,7 @@
 }
 
 .cardDesc {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.65;
   text-align: left;
@@ -334,7 +334,7 @@
 }
 
 .dropdownDetail {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.75;
   max-width: 680px;
@@ -348,7 +348,7 @@
 
 .skillTag {
   font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   letter-spacing: 0.05em;
   padding: 0.2rem 0.6rem;
   border-radius: 2px;

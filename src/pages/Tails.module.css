@@ -10,7 +10,7 @@
 
 .slug {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: var(--accent);
   letter-spacing: 0.08em;
   margin-bottom: 1rem;
@@ -56,14 +56,14 @@
 
 .sideTitle {
   font-family: 'DM Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.825rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
 .sideLink {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-muted);
   transition: color 0.2s;
   display: block;
@@ -74,7 +74,7 @@
 }
 
 .sideText {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--text-muted);
   display: block;
 }

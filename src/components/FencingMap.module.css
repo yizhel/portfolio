@@ -25,7 +25,7 @@
 
 .legendLabel {
   font-family: 'DM Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   letter-spacing: 0.04em;
   color: var(--off-white-dim);
 }
@@ -50,19 +50,34 @@
   padding: 0.5rem 0.75rem;
   border-radius: 2px;
   pointer-events: none;
-  max-width: 220px;
-  white-space: nowrap;
+  max-width: 340px;
+  white-space: normal;
+}
+
+.tooltipEvents {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 0.15rem;
+}
+
+.tooltipEvent {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--off-white-dim);
+  letter-spacing: 0.03em;
+  line-height: 1.4;
 }
 
 .tooltipName {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: var(--off-white);
   line-height: 1.3;
 }
 
 .tooltipCategory {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   letter-spacing: 0.06em;
 }
 
@@ -82,7 +97,7 @@
 
 .zoomLabel {
   font-family: 'DM Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.04em;
 }
