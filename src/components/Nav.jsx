@@ -4,9 +4,9 @@ import styles from './Nav.module.css'
 
 const links = [
   { to: '/sign', label: 'design' },
-  { to: '/velop', label: 'develop' },
-  { to: '/fense', label: 'defense' },
-  { to: '/tails', label: 'details' },
+  { to: '/velop', label: 'photography' },
+  { to: '/fense', label: 'fencing' },
+  { to: '/tails', label: 'contact' },
 ]
 
 export default function Nav() {

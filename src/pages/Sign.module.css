@@ -167,18 +167,13 @@
   flex-direction: column;
 }
 
-.timelineToggle {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
+.timelineLink {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   width: 100%;
-  font: inherit;
+  text-decoration: none;
   color: inherit;
-  text-align: left;
 }
 
 .timelineTop {
@@ -204,7 +199,7 @@
   text-align: left;
 }
 
-.timelineToggle:hover .timelineTitle {
+.timelineLink:hover .timelineTitle {
   color: var(--accent-bright);
 }
 
@@ -259,23 +254,15 @@
   background: var(--navy-mid);
 }
 
-.cardOpen {
-  background: var(--navy-mid);
-}
-
-.cardToggle {
-  background: none;
-  border: none;
-  cursor: pointer;
+.cardLink {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   padding: 2rem 2.5rem;
   width: 100%;
   box-sizing: border-box;
-  font: inherit;
+  text-decoration: none;
   color: inherit;
-  text-align: left;
 }
 
 .cardMeta {
@@ -313,65 +300,18 @@
   text-align: left;
 }
 
-/* Dropdown */
+/* Arrow */
 
-.dropdown {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 2.5rem 1.75rem;
-  border-top: 1px solid rgba(126, 184, 212, 0.1);
-  background: rgba(126, 184, 212, 0.03);
-  animation: fadeSlide 0.18s ease;
-}
-
-.timelineContent .dropdown {
-  padding: 1rem 0 0.5rem;
-}
-
-@keyframes fadeSlide {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.dropdownDetail {
-  font-size: 1rem;
-  color: var(--off-white-dim);
-  line-height: 1.75;
-  max-width: 680px;
-}
-
-.skillTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.skillTag {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  padding: 0.2rem 0.6rem;
-  border-radius: 2px;
-  background: rgba(126, 184, 212, 0.08);
-  border: 1px solid rgba(126, 184, 212, 0.2);
-  color: var(--off-white-dim);
-}
-
-/* Chevron */
-
-.chevron {
+.arrow {
   color: var(--text-muted);
   flex-shrink: 0;
-  transition: transform 0.2s;
+  transition: color 0.2s, transform 0.2s;
 }
 
-.chevronOpen {
-  transform: rotate(180deg);
-}
-
-.timelineDotOpen {
-  background: var(--accent);
+.timelineLink:hover .arrow,
+.cardLink:hover .arrow {
+  color: var(--accent);
+  transform: translateX(2px);
 }
 
 @media (max-width: 640px) {
@@ -398,11 +338,7 @@
     grid-template-columns: 1fr;
   }
 
-  .cardToggle {
+  .cardLink {
     padding: 1.5rem 1.25rem;
-  }
-
-  .dropdown {
-    padding: 1rem 1.25rem 1.5rem;
   }
 }

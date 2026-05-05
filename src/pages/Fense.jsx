@@ -15,9 +15,16 @@ export default function Fense() {
             <h2 className={styles.blockLabel}>Refereeing</h2>
             <p className={styles.blockText}>
               I hold the N1 rating — the highest level of domestic fencing officiating in the United States —
-              and am a Certified Referee Observer. Since 2024 I've served on the Ethics Committee of the
-              USA Fencing Referees Commission, contributing to the integrity and standards of competition
-              at the national level.
+              and am an active national-level referee, assigned regularly to NAC and national championship
+              events across all three weapons. I am also a Certified Referee Observer, trained to evaluate
+              and provide feedback to other referees during competition.
+            </p>
+            <p className={styles.blockText}>
+              In 2025 I was selected to the EFC Cadet List for Designated events, recognizing readiness
+              to officiate at international-level cadet competitions sanctioned by the European Fencing
+              Confederation. Since 2024 I have served on the Ethics Committee of the USA Fencing Referees
+              Commission, and I served on the Nomination Committee for the Referees Commission election,
+              overseeing candidate vetting and election integrity.
             </p>
           </div>
 
@@ -66,7 +73,9 @@ export default function Fense() {
             <h3 className={styles.rolesTitle}>Roles</h3>
             {[
               ['Head Coach', 'CMU Fencing Club', '2023–present'],
+              ['EFC Cadet List — Designated Events', 'European Fencing Confederation', '2025'],
               ['Ethics Committee', 'USA Fencing Referees Commission', '2024–present'],
+              ['Nomination Committee', 'USA Fencing Referees Commission', '2024'],
               ['Exec Board Member', 'Midwest Fencing Conference', '2021–2023'],
               ['Club President', 'CMU Fencing Club', '2019–2021'],
             ].map(([role, org, years]) => (

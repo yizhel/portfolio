@@ -59,7 +59,7 @@ const locations = [
   { name: "Georgia International Convention Center",   category: 'Referee', coords: [-84.4575306, 33.6456265], events: ["2024 — December SJCC"] },
   { name: "Atlantic City Convention Center",           category: 'Referee', coords: [-74.4385634, 39.3630994], events: ["2024 — October NAC"] },
   { name: "Virginia Beach Convention Center",          category: 'Referee', coords: [-75.9872763, 36.8461695], events: ["2024 — USACFC Championships"] },
-  { name: "Greater Richmond Convention Center",        category: 'Referee', coords: [-77.4368334, 37.5450707], events: ["2023 — December SJCC + Div I NAC"] },
+  { name: "Greater Richmond Convention Center",        category: 'Referee', coords: [-77.4368334, 37.5450707], events: ["2023 — December SJCC + Div I NAC", "2026 — April NAC"] },
   { name: "Ryan Fieldhouse",                           category: 'Referee', coords: [-87.6725064, 42.060229 ], events: ["2025 — Remenyik Open", "2026 — Schiller Duals"] },
   { name: "San José Convention Center & South Hall",   category: 'Referee', coords: [-121.8881933, 37.3284838], events: ["2024 — January NAC"] },
   { name: "Oregon Convention Center",                  category: 'Referee', coords: [-122.6618605, 45.5286606], events: ["2024 — March NAC"] },
