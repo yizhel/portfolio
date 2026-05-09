@@ -4,16 +4,8 @@
 }
 
 .header {
-  padding: 5rem 2.5rem 3rem;
+  padding: 5rem 2.5rem 2rem;
   max-width: 700px;
-}
-
-.slug {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.875rem;
-  color: var(--accent);
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
 }
 
 .title {
@@ -28,22 +20,66 @@
   color: var(--text-muted);
 }
 
+/* Filter toolbar */
+
+.toolbar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0 2.5rem 2rem;
+}
+
+.filter {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(126, 184, 212, 0.2);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filterActive {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(126, 184, 212, 0.08);
+}
+
+/* Masonry gallery */
+
 .gallery {
   columns: 3;
   column-gap: 4px;
-  padding: 0 2.5rem 4rem;
+  padding: 0 2.5rem 6rem;
 }
 
-.gallery img {
-  width: 100%;
-  margin-bottom: 4px;
+.photoBtn {
   display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 4px;
+  cursor: pointer;
   break-inside: avoid;
+}
+
+.photo {
+  width: 100%;
+  display: block;
   transition: opacity 0.2s;
 }
 
-.gallery img:hover {
-  opacity: 0.85;
+.photoBtn:hover .photo {
+  opacity: 0.82;
 }
 
 .placeholder {
@@ -52,7 +88,116 @@
   font-family: 'DM Mono', monospace;
 }
 
-@media (max-width: 768px) {
+/* Lightbox */
+
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 27, 42, 0.96);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  transition: color 0.15s;
+  z-index: 101;
+}
+
+.lightboxClose:hover {
+  color: var(--off-white);
+}
+
+.lightboxNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 1rem 0.75rem;
+  display: flex;
+  transition: color 0.15s;
+  z-index: 101;
+}
+
+.lightboxNav:hover {
+  color: var(--off-white);
+}
+
+.lightboxPrev { left: 1rem; }
+.lightboxNext { right: 1rem; }
+
+.lightboxContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightboxImg {
+  object-fit: contain;
+  display: block;
+  border-radius: 1px;
+}
+
+.lightboxImg.landscape {
+  max-width: min(1200px, 85vw);
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+}
+
+.lightboxImg.portrait {
+  max-height: 85vh;
+  max-width: min(600px, 75vw);
+  width: auto;
+  height: auto;
+}
+
+.lightboxImg.square {
+  max-width: min(800px, 80vw);
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+}
+
+.lightboxMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.lightboxCaption {
+  font-size: 0.95rem;
+  color: var(--off-white-dim);
+}
+
+.lightboxLocation {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
   .gallery {
     columns: 2;
   }
@@ -60,16 +205,28 @@
 
 @media (max-width: 640px) {
   .header {
-    padding: 4rem 1.25rem 2rem;
+    padding: 4rem 1.25rem 1.5rem;
+  }
+
+  .toolbar {
+    padding: 0 1.25rem 1.5rem;
   }
 
   .gallery {
-    padding: 0 1.25rem 4rem;
     columns: 2;
+    padding: 0 1.25rem 4rem;
+  }
+
+  .lightboxOverlay {
+    padding: 1rem;
+  }
+
+  .lightboxNav {
+    padding: 0.75rem 0.5rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 420px) {
   .gallery {
     columns: 1;
   }

@@ -1,0 +1,20 @@
+// How to add photos:
+// 1. Share the album in Google Photos (keep it shared or URLs break)
+// 2. Open a photo in the shared album, right-click the image → "Copy image address"
+// 3. Paste the URL below and append =w1600 for full size, =w800 for thumbnail
+//    e.g. url: 'https://lh3.googleusercontent.com/pw/XXXX=w1600'
+// 4. Set aspect: 'landscape' | 'portrait' | 'square' — controls masonry column flow
+// 5. caption and location are optional
+
+export const photos = [
+  // {
+  //   id: 'example-1',
+  //   url: 'https://lh3.googleusercontent.com/pw/XXXX=w1600',
+  //   category: 'Travel',       // 'Fencing' | 'Travel' | 'Street' | 'Portrait'
+  //   aspect: 'landscape',      // 'landscape' | 'portrait' | 'square'
+  //   caption: 'Optional caption',
+  //   location: 'Optional location',
+  // },
+]
+
+export const CATEGORIES = ['All', 'Fencing', 'Travel', 'Street', 'Portrait']
