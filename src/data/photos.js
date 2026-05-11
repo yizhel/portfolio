@@ -9,7 +9,7 @@
 export const photos = [
   {
     id: 'photo-1',
-    url: 'https://lh3.googleusercontent.com/pw/AP1GczNt87NAygeeLlJAotJ6FJ4b1UXUWyyJNCQ1zWFVzC-WcQk8jcdsb73Nh1tXjCvEU6km6A9U4AWz9FEAP_NLi6B7ZbrYnnY1JIP-ZifVH1LQCoj0VHr2ONJPPLjibZqOEP3BsCs4mNRODkd24kmfkk1zg',
+    url: 'https://lh3.googleusercontent.com/pw/AP1GczPbPWOmmTtxorMbLo-zpPsqsTIAsIc3Y_Pq33z3wJhrbMwGtmExvMtGsj3gHVManOxqkN2CK93MqhY_i66EnBgQBYPfZkDmDdysNaSK2bnEdCw-C4roGdo2z2mRpVxWCiDcEX3xZaCjf3o1n9XOmRzF5Q=w1392-h956-s-no-gm',
     category: 'Nature',
     aspect: 'landscape',
     caption: '',
