@@ -127,7 +127,7 @@ export default function Velop() {
             aria-label={photo.caption || `Photo ${i + 1}`}
           >
             <img
-              src={`${photo.url}=w800`}
+              src={`${photo.url.replace(/=\w[\w-]*$/, '')}=w800`}
               alt={photo.caption || ''}
               className={styles.photo}
               loading="lazy"
